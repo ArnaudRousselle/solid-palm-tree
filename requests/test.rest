@@ -1,0 +1,131 @@
+@apiUrl = https://localhost:7102
+
+###
+GET {{apiUrl}}/api/Portfolio/GetPortfolios
+content-type: application/json
+
+###
+GET {{apiUrl}}/api/Portfolio/GetBillings/8f534a82-12c9-47fa-a3eb-0c1f2381b943
+content-type: application/json
+
+###
+GET {{apiUrl}}/api/Portfolio/GetRepetitiveBillings/8f86d07f-eeeb-480b-b934-201bbd241712
+content-type: application/json
+
+###
+PUT {{apiUrl}}/api/Portfolio/CreatePortfolio
+content-type: application/json
+
+{
+    "name": "Boursorama2"
+}
+
+###
+POST {{apiUrl}}/api/Portfolio/EditPortfolio
+content-type: application/json
+
+{
+    "portfolioId": "8f534a82-12c9-47fa-a3eb-0c1f2381b943",
+    "name": "Crédit Agricole 3"
+}
+
+###
+DELETE {{apiUrl}}/api/Portfolio/DeletePortfolio
+content-type: application/json
+
+{
+    "portfolioId": "b3d37179-c318-4b44-95e9-94fa6d8920b8"
+}
+
+###
+PUT {{apiUrl}}/api/Portfolio/AddBilling
+content-type: application/json
+
+{
+    "portfolioId": "8f86d07f-eeeb-480b-b934-201bbd241712",
+    "date": "20221020",
+    "name": "Aaaa",
+    "amount": -63.2,
+    "checked": false,
+    "comment": "",
+    "isArchived": false,
+    "isSaving": false
+}
+
+###
+POST {{apiUrl}}/api/Portfolio/EditBilling
+content-type: application/json
+
+{
+    "portfolioId": "b3d37179-c318-4b44-95e9-94fa6d8920b8",
+    "billingId": "4d538ea4-bb24-4eb0-a330-5d1f4c2303d4",
+    "date": "20221020",
+    "name": "Dentiste2",
+    "amount": -63.4,
+    "checked": false,
+    "comment": "",
+    "isArchived": false,
+    "isSaving": false
+}
+
+###
+DELETE {{apiUrl}}/api/Portfolio/DeleteBilling
+content-type: application/json
+
+{
+    "portfolioId": "b3d37179-c318-4b44-95e9-94fa6d8920b8",
+    "billingId": "4d538ea4-bb24-4eb0-a330-5d1f4c2303d4"
+}
+
+###
+PUT {{apiUrl}}/api/Portfolio/AddRepetitiveBilling
+content-type: application/json
+
+{
+    "portfolioId": "07d24067-4f07-4e6f-9984-9c957a4b605a",
+    "date": "20221110",
+    "name": "Repetitive aaaa",
+    "amount": -122.34,
+    "frequenceMode": 1
+}
+
+###
+POST {{apiUrl}}/api/Portfolio/EditRepetitiveBilling
+content-type: application/json
+
+{
+    "portfolioId": "07d24067-4f07-4e6f-9984-9c957a4b605a",
+    "repetitiveBillingId": "b0cbca85-6223-40c0-b536-4d2af9769492",
+    "date": "20221021",
+    "name": "Repetitive bbb",
+    "amount": -122.35,
+    "frequenceMode": 2
+}
+
+###
+DELETE {{apiUrl}}/api/Portfolio/DeleteRepetitiveBilling
+content-type: application/json
+
+{
+    "portfolioId": "07d24067-4f07-4e6f-9984-9c957a4b605a",
+    "repetitiveBillingId": "f8428c9d-c9f2-4f29-9c43-fcb1b11c7b8f"
+}
+
+###
+PUT {{apiUrl}}/api/Portfolio/InsertNextBilling
+content-type: application/json
+
+{
+    "portfolioId": "07d24067-4f07-4e6f-9984-9c957a4b605a",
+    "repetitiveBillingId": "d3d1c387-c19d-43eb-86e4-b3bd8c655309"
+}
+
+###
+POST {{apiUrl}}/api/Portfolio/MarkAsChecked
+content-type: application/json
+
+{
+    "portfolioId": "07d24067-4f07-4e6f-9984-9c957a4b605a",
+    "billingId": "ddc65c35-5ccf-4bab-adfd-ce3c202328c7",
+    "checked": true
+}
