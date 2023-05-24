@@ -2,10 +2,11 @@ import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Configuration, PortfolioApi } from "./api";
 import "./App.css";
-import { Test1Component } from "./components";
+import { Test1Component, ThemeSwitch } from "./components";
 import { ApiContext, IApiContext } from "./contexts/ApiContext";
 import { useHubConnection } from "./hooks";
-import { HubConnectionContext, ThemeContext } from "./contexts";
+import { HubConnectionContext } from "./contexts";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,9 +29,10 @@ function App() {
     <HubConnectionContext.Provider value={{ hubConnection }}>
       <QueryClientProvider client={queryClient}>
         <ApiContext.Provider value={apiContext}>
-          <ThemeContext.Provider value={{ mode: "dark" }}>
+          <ThemeProvider>
+            <ThemeSwitch />
             <Test1Component />
-          </ThemeContext.Provider>
+          </ThemeProvider>
         </ApiContext.Provider>
       </QueryClientProvider>
     </HubConnectionContext.Provider>
