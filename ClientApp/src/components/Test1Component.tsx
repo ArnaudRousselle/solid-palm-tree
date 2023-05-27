@@ -38,22 +38,15 @@ export const Test1Component = () => {
             label="Prénom"
             control={control}
             fieldPath="firstName"
-            validate={() => {
-              const nameValue = getValues("name");
-              const age = getValues("age");
-              console.log("je valide 1", { nameValue, age });
-              return "eh non";
-            }}
           />
           <NumberField
             label="Age"
             control={control}
             fieldPath="age"
             validate={() => {
-              const nameValue = getValues("name");
+              console.log("je valide");
               const age = getValues("age");
-              console.log("je valide 2", { nameValue, age });
-              return true;
+              return age > 20;
             }}
           />
           <DateField label="Date" control={control} fieldPath="date" />

@@ -1,7 +1,6 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../contexts";
-import { CheckBoxField, Form, SubmitButton } from "./form";
-import { Control, useWatch } from "react-hook-form";
+import { AutoSubmit, CheckBoxField, Form } from "./form";
 
 export const ThemeSwitch = () => {
   const { mode, setMode } = useContext(ThemeContext);
@@ -11,26 +10,12 @@ export const ThemeSwitch = () => {
     <Form
       initialValues={{ isDark: mode === "dark" }}
       onSubmit={({ isDark }) => setMode(isDark ? "dark" : "light")}
-      render={({ control }) => <FormContent control={control} />}
+      render={({ control }) => (
+        <>
+          <CheckBoxField control={control} fieldPath="isDark" label="" />
+          <AutoSubmit control={control} />
+        </>
+      )}
     />
-  );
-};
-
-const FormContent = ({
-  control,
-}: {
-  control: Control<{
-    isDark: boolean;
-  }>;
-}) => {
-  const isDark = useWatch({ control, name: "isDark" });
-
-  useEffect(() => {}, [isDark]);
-
-  return (
-    <>
-      <CheckBoxField control={control} fieldPath="isDark" label="" />
-      <SubmitButton />
-    </>
   );
 };

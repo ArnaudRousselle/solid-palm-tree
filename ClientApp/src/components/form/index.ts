@@ -1,3 +1,4 @@
+export * from './AutoSubmit';
 export * from './CheckBoxField';
 export * from './DateField';
 export * from './Form';
