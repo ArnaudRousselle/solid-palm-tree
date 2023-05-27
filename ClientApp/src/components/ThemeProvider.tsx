@@ -10,7 +10,6 @@ export const ThemeProvider = ({ children }: IProps) => {
 
   useEffect(() => {
     const elements = document.getElementsByTagName("html");
-    console.log("Ici", elements);
     if (elements.length !== 1) return;
     elements[0].setAttribute("data-theme", mode);
   }, [mode]);
