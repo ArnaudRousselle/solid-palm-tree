@@ -1,0 +1,4 @@
+//todo ARNAUD
+
+- basculer le site client sur Vite
+- reprendre l'architecture de Milo (séparer le client de la web api)

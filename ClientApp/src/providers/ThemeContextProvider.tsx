@@ -3,7 +3,7 @@ import { IColors, ThemeContext } from "../contexts";
 
 interface IProps extends PropsWithChildren {}
 
-export const ThemeProvider = ({ children }: IProps) => {
+export const ThemeContextProvider = ({ children }: IProps) => {
   const [mode, setMode] = useState<"light" | "dark">("dark");
 
   const colors = useMemo(() => getColors(mode), [mode]);

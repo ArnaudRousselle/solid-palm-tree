@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { UseQueryOptions, useQuery } from "react-query";
 import { ApiContext } from "../contexts";
 import { PortfolioItem, PortfolioItemArrayRequestResult } from "../api";
-import { useQueryWithEvents } from "./useBaseQuery";
+import { useQueryWithEvents } from "./useQueryWithEvents";
 
 export function usePortfoliosQuery(
   options?: Omit<
